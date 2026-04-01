@@ -1,274 +1,180 @@
 :root {
-    --bg: #02040f;
+    --bg: #010409;
+    --navy: #0a192f;
     --blue: #00bfff;
-    --blue-soft: rgba(0, 191, 255, 0.15);
-    --dark: rgba(10, 15, 44, 0.85);
+    --blue-dark: #003d5b;
+    --blue-glow: rgba(0, 191, 255, 0.4);
     --white: #e6faff;
     --danger: #ff003c;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Share Tech Mono', monospace;
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--blue);
     height: 100vh;
-    overflow: hidden; /* Empêche le scroll sur tout l'écran */
+    overflow-x: hidden;
 }
 
-/* Arrière-plan Matrix */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
+canvas { position: fixed; top: 0; left: 0; z-index: 0; opacity: 0.4; }
 
 .container {
     position: relative;
     z-index: 2;
-    width: 95%;
-    max-width: 1200px;
-    height: 100vh;
+    padding: 15px;
+    max-width: 800px; /* On réduit pour un meilleur look sur mobile/tablette */
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.hidden {
-    display: none !important;
-}
+.hidden { display: none !important; }
 
-/* --- AUTHENTIFICATION --- */
-#auth {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
+/* --- LOGIN --- */
 .auth-box {
-    padding: 40px;
+    margin-top: 15vh;
+    background: rgba(10, 25, 47, 0.9);
     border: 1px solid var(--blue);
-    background: var(--dark);
-    box-shadow: 0 0 20px var(--blue-soft), inset 0 0 15px var(--blue-soft);
-    width: 100%;
-    max-width: 450px;
+    padding: 30px;
     text-align: center;
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px var(--blue-dark);
+    clip-path: polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
 }
 
-/* Effet Glitch sur le Titre */
-.glitch {
+.input-container {
     position: relative;
-    font-size: 2.5rem;
-    color: var(--white);
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px var(--blue);
+    margin: 20px 0;
 }
 
-.glitch::before, .glitch::after {
-    content: attr(data-text);
+.input-icon {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
 }
 
-.glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 var(--danger);
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: 2px 0 var(--blue);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim-1 {
-    0% { clip-path: inset(20% 0 80% 0); }
-    20% { clip-path: inset(60% 0 10% 0); }
-    40% { clip-path: inset(40% 0 50% 0); }
-    60% { clip-path: inset(80% 0 5% 0); }
-    80% { clip-path: inset(10% 0 70% 0); }
-    100% { clip-path: inset(30% 0 50% 0); }
-}
-
-@keyframes glitch-anim-2 {
-    0% { clip-path: inset(10% 0 60% 0); }
-    20% { clip-path: inset(30% 0 20% 0); }
-    40% { clip-path: inset(70% 0 10% 0); }
-    60% { clip-path: inset(20% 0 50% 0); }
-    80% { clip-path: inset(90% 0 5% 0); }
-    100% { clip-path: inset(40% 0 30% 0); }
-}
-
-/* Formulaire */
 input {
     width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--blue);
+    padding: 15px 15px 15px 45px;
+    background: black;
+    border: 1px solid var(--blue-dark);
     color: var(--white);
     font-family: inherit;
-    font-size: 1.2rem;
-    text-align: center;
-    letter-spacing: 3px;
     outline: none;
 }
 
-input:focus {
-    box-shadow: 0 0 10px var(--blue-soft);
-}
-
+/* --- BOUTONS --- */
 .btn {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
     border: 1px solid var(--blue);
-    background: var(--blue-soft);
+    background: rgba(0, 191, 255, 0.1);
     color: var(--blue);
+    padding: 15px;
     font-family: inherit;
-    font-size: 1.1rem;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     transition: 0.3s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn:hover {
     background: var(--blue);
-    color: #000;
+    color: black;
     box-shadow: 0 0 15px var(--blue);
 }
 
-.error {
-    display: none;
-    color: var(--danger);
-    margin-top: 15px;
-    font-weight: bold;
-    text-shadow: 0 0 5px var(--danger);
-    animation: blink 0.5s infinite;
-}
+.main-btn { width: 100%; font-weight: bold; }
 
-/* --- APPLICATION PRINCIPALE --- */
-#app {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+/* --- APP LAYOUT (VERTICAL) --- */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     border-bottom: 2px solid var(--blue);
-    padding: 15px 0;
+    padding-bottom: 15px;
     margin-bottom: 20px;
 }
 
-.neon {
-    font-size: 2rem;
-    color: var(--white);
-    text-shadow: 0 0 10px var(--blue), 0 0 20px var(--blue);
-}
-
-.status-box {
+.header-status {
     display: flex;
-    gap: 20px;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    margin-top: 10px;
     color: var(--white);
-    font-size: 1.2rem;
 }
 
-.status {
-    color: var(--blue);
-    animation: blink 2s infinite;
-}
+.online-dot { color: var(--blue); animation: blink 1.5s infinite; }
 
-.grid {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 30px;
-    height: 65vh;
-}
-
+/* Sidebar devient un conteneur de boutons empilés */
 .sidebar {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.main {
-    border: 1px solid var(--blue);
-    background: var(--dark);
-    padding: 30px;
-    overflow-y: auto;
-    box-shadow: inset 0 0 20px var(--blue-soft);
-}
-
-/* Styles injectés dans le main */
-.main h2 {
-    color: var(--white);
-    border-bottom: 1px dashed var(--blue);
-    padding-bottom: 10px;
+    flex-direction: column; /* EMPILÉS VERTICALEMENT */
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-.list {
-    list-style: none;
+.nav-btn {
+    width: 100%;
+    justify-content: flex-start; /* Aligné à gauche pour le menu */
+    padding-left: 20px;
+    clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
 }
 
-.list li {
-    padding: 12px;
-    border-bottom: 1px solid var(--blue-soft);
+/* Zone de contenu EN DESSOUS */
+.main-display {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--blue-dark);
+    min-height: 250px;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 191, 255, 0.1);
+}
+
+.main-display h2 {
+    font-size: 1.2rem;
+    border-left: 4px solid var(--blue);
+    padding-left: 10px;
+    margin-bottom: 15px;
     color: var(--white);
 }
 
-.list li::before {
-    content: '> ';
-    color: var(--blue);
+.placeholder-msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    opacity: 0.4;
 }
 
-.link-box a {
-    display: block;
-    margin-top: 15px;
-    color: var(--white);
+.placeholder-msg i { font-size: 3rem; margin-bottom: 10px; }
+
+/* RECRUTEMENT STYLE */
+.recruit-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recruit-link {
     text-decoration: none;
-    border: 1px solid var(--blue);
+    color: var(--white);
+    background: var(--blue-dark);
     padding: 15px;
-    text-align: center;
-    background: var(--blue-soft);
-    transition: 0.3s;
-}
-
-.link-box a:hover {
-    background: var(--blue);
-    color: #000;
-}
-
-footer {
+    border: 1px solid var(--blue);
     text-align: center;
     font-size: 0.9rem;
-    opacity: 0.6;
-    margin-top: 20px;
-    letter-spacing: 1px;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-    }
+.recruit-link:hover { background: var(--blue); color: black; }
+
+/* ANIMATIONS */
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+.footer-line { height: 1px; background: linear-gradient(90deg, transparent, var(--blue), transparent); margin-bottom: 10px; }
