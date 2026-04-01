@@ -1,280 +1,122 @@
+
+
+
+/* ========================= style.css ========================= */
 :root {
-    --bg-color: #040d09;
-    --tech-green: #00ff66;
-    --tech-green-dim: rgba(0, 255, 102, 0.2);
-    --tech-dark: #0a1a12;
-    --danger-red: #ff3333;
-    --font-main: 'Share Tech Mono', monospace;
+    --bg: #050816;
+    --blue: #00bfff;
+    --blue-soft: rgba(0,191,255,0.15);
+    --dark: #0a0f2c;
+    --white: #e6faff;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Share Tech Mono', monospace;
+    background:linear-gradient(135deg,#050816,#02040f);
+    color:var(--blue);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--tech-green);
-    font-family: var(--font-main);
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container{width:95%;max-width:1200px;height:90vh}
+.hidden{display:none}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--blue);
+    padding:15px;
 }
 
-/* Effet CRT / Scanlines */
-.scanlines {
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 4px, 6px 100%;
-    z-index: 999;
-    pointer-events: none;
-    opacity: 0.6;
+.status{color:var(--white)}
+
+footer{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    font-size:12px;
+    opacity:.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    height: 90vh;
-    position: relative;
-    z-index: 10;
+#auth{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
 }
 
-.hidden {
-    display: none !important;
+.auth-box{
+    padding:30px;
+    border:1px solid var(--blue);
+    background:var(--dark);
+    box-shadow:0 0 20px var(--blue-soft);
+    width:100%;
+    max-width:400px;
+    text-align:center;
 }
 
-/* --- ÉCRAN DE VERROUILLAGE --- */
-#auth-gateway {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+input{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:transparent;
+    border:1px solid var(--blue);
+    color:var(--white);
 }
 
-.terminal-header {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+.btn{
+    margin-top:20px;
+    padding:12px;
+    border:1px solid var(--blue);
+    background:var(--blue-soft);
+    color:var(--blue);
+    cursor:pointer;
+    transition:.3s;
 }
 
-.status-blip {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: var(--tech-green);
-    border-radius: 50%;
-    margin-right: 10px;
-    animation: blink 1.5s infinite;
+.btn:hover{
+    background:var(--blue);
+    color:#000;
 }
 
-.auth-box {
-    background: var(--tech-dark);
-    padding: 40px;
-    border: 1px solid var(--tech-green);
-    box-shadow: 0 0 20px var(--tech-green-dim), inset 0 0 20px var(--tech-green-dim);
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    position: relative;
+.grid{
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:20px;
+    height:80%;
 }
 
-/* Coins technologiques de la boite */
-.auth-box::before, .auth-box::after {
-    content: '';
-    position: absolute;
-    width: 20px; height: 20px;
-    border: 2px solid var(--tech-green);
-}
-.auth-box::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-.auth-box::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
-
-.glitch {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 0 var(--danger-red), -2px 0 blue;
-    animation: glitch-anim 2s infinite linear alternate-reverse;
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    margin: 30px 0;
-    border-bottom: 2px solid var(--tech-green);
+.main{
+    border:1px solid var(--blue);
+    padding:20px;
+    overflow:auto;
 }
 
-.prompt {
-    font-size: 1.5rem;
-    margin-right: 10px;
+.list li{
+    padding:8px;
+    border-bottom:1px solid var(--blue-soft);
 }
 
-#pass-input {
-    background: transparent;
-    border: none;
-    color: var(--tech-green);
-    font-family: var(--font-main);
-    font-size: 1.5rem;
-    width: 100%;
-    outline: none;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+.link-box a{
+    display:block;
+    margin-top:10px;
+    color:var(--white);
+    text-decoration:none;
+    border:1px solid var(--blue);
+    padding:10px;
 }
 
-.error {
-    color: var(--danger-red);
-    margin-top: 20px;
-    text-shadow: 0 0 5px var(--danger-red);
-    animation: blink 0.5s infinite;
-}
+.error{display:none;color:red;margin-top:10px}
 
-/* --- BOUTONS TECH --- */
-.btn-tech {
-    background: var(--tech-green-dim);
-    color: var(--tech-green);
-    border: 1px solid var(--tech-green);
-    padding: 15px 30px;
-    font-family: var(--font-main);
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    transition: all 0.2s ease-in-out;
-    width: 100%;
-}
 
-.btn-tech:hover {
-    background: var(--tech-green);
-    color: var(--bg-color);
-    box-shadow: 0 0 15px var(--tech-green);
-}
-
-/* --- TABLEAU DE BORD (HUD) --- */
-.hud-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--tech-green);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-}
-
-.hud-title {
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px var(--tech-green);
-}
-
-.online { color: var(--tech-green); font-weight: bold; text-shadow: 0 0 5px var(--tech-green); }
-
-.grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 30px;
-    height: calc(100% - 120px);
-}
-
-.nav-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-}
-
-.nav-btn {
-    height: 60px;
-    font-size: 1.1rem;
-    text-align: left;
-    padding-left: 20px;
-    position: relative;
-}
-
-.nav-btn::before {
-    content: '>';
-    position: absolute;
-    right: 20px;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.nav-btn:hover::before {
-    opacity: 1;
-    transform: translateX(5px);
-}
-
-.main-display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.video-container {
-    background: #000;
-    height: 400px;
-    border: 1px solid var(--tech-green);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 0 30px rgba(0, 255, 102, 0.1);
-}
-
-.video-overlay-corners {
-    position: absolute;
-    top: 10px; left: 10px; right: 10px; bottom: 10px;
-    border: 1px solid rgba(0, 255, 102, 0.3);
-    pointer-events: none;
-}
-
-.video-overlay-corners::before, .video-overlay-corners::after {
-    content: '+';
-    position: absolute;
-    color: var(--tech-green);
-}
-.video-overlay-corners::before { top: -10px; left: -5px; }
-.video-overlay-corners::after { bottom: -10px; right: -5px; }
-
-.play-icon {
-    font-size: 4rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-.play-icon:hover { transform: scale(1.1); text-shadow: 0 0 20px var(--tech-green); }
-
-.video-text {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    animation: blink 2s infinite;
-}
-
-.credits {
-    text-align: center;
-    margin-top: 30px;
-    border-top: 1px dashed rgba(0, 255, 102, 0.3);
-    padding-top: 20px;
-}
-
-.sub-credit {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-top: 5px;
-}
-
-/* Animations */
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes glitch-anim {
-    0% { clip-path: inset(20% 0 80% 0); }
-    20% { clip-path: inset(60% 0 10% 0); }
-    40% { clip-path: inset(40% 0 50% 0); }
-    60% { clip-path: inset(80% 0 5% 0); }
-    80% { clip-path: inset(10% 0 70% 0); }
-    100% { clip-path: inset(30% 0 50% 0); }
-}
