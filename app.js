@@ -42,7 +42,8 @@ function show(type) {
         c.innerHTML = `<h2><i class="fas fa-microchip"></i> DATA CORE</h2>
         <p>MEMBRES : 7</p>
         <p>SERVEUR : UNKNOW</p>
-        <p>ENCRYPTAGE : ###-###</p>`;
+        <p>ENCRYPTAGE : ###-###</p>
+        <p>DEV : <a href="https://whatsapp.com/channel/0029VagHuWO1iUxa0DCwBK16">Click</a></p>`;
     }
 
     if (type === 'recrutement') {
