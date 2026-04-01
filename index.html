@@ -1,57 +1,53 @@
-<!-- ========================= index.html ========================= -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAXE - Interface Pro</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAXE | CYBER SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <canvas id="matrixCanvas"></canvas>
 
-<!-- AUTH -->
-<div id="auth">
-    <div class="auth-box">
-        <h1>NAXE ACCESS</h1>
-        <input type="password" id="pass" placeholder="CODE">
-        <button class="btn" onclick="login()">Connexion</button>
-        <p id="err" class="error">Code incorrect</p>
+    <div class="container">
+        <div id="auth">
+            <div class="auth-box">
+                <h1 class="glitch" data-text="NAXE ACCESS">NAXE ACCESS</h1>
+                <input type="password" id="pass" placeholder="ENTREZ LE CODE" autocomplete="off">
+                <button class="btn" onclick="login()">CONNEXION</button>
+                <p id="err" class="error">ACCÈS REFUSÉ</p>
+            </div>
+        </div>
+
+        <div id="app" class="hidden">
+            <header>
+                <h1 class="neon">NAXE BLACKCORE</h1>
+                <div class="status-box">
+                    <span id="clock">00:00:00</span>
+                    <span class="status">● ONLINE</span>
+                </div>
+            </header>
+
+            <div class="grid">
+                <div class="sidebar">
+                    <button class="btn" onclick="show('members')">MEMBRES</button>
+                    <button class="btn" onclick="show('clans')">CLANS</button>
+                    <button class="btn" onclick="show('stats')">STATS</button>
+                    <button class="btn" onclick="show('recrutement')">RECRUTEMENT</button>
+                </div>
+
+                <div class="main" id="content">
+                    </div>
+            </div>
+
+            <footer>
+                NAXE CYBER SYSTEM © 2026 • CONNEXION SÉCURISÉE
+            </footer>
+        </div>
     </div>
-</div>
 
-<!-- APP -->
-<div id="app" class="hidden">
-<header>
-    <h1>NAXE SYSTEM</h1>
-    <span class="status">ONLINE</span>
-</header>
-
-<div class="grid">
-
-<div class="sidebar">
-    <button class="btn" onclick="show('members')">Membres</button>
-    <button class="btn" onclick="show('clans')">Clans</button>
-    <button class="btn" onclick="show('stats')">Stats</button>
-    <button class="btn" onclick="show('recrutement')">Recrutement</button>
-</div>
-
-<div class="main" id="content">
-    <h2>Bienvenue</h2>
-    <p>Sélectionne une option à gauche</p>
-</div>
-
-</div>
-
-<footer>
-    NAXE © 2026 - Design Blue Pro
-</footer>
-</div>
-
-</div>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
