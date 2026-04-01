@@ -1,61 +1,57 @@
+<!-- ========================= index.html ========================= -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAXE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAXE - Interface Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scanlines"></div>
 
-    <div id="auth-gateway" class="container">
-        <div class="terminal-header">
-            <span class="status-blip"></span>
-            SYSTEM BOOT...
-        </div>
-        <div class="auth-box">
-            <h1 class="glitch" data-text="FORCE SPECIAL NAXE">NAXE</h1>
-            <p id="typewriter"></p>
-            <div class="input-group">
-                <span class="prompt">>_</span>
-                <input type="password" id="pass-input" placeholder="ENTREZ LE CODE D'ACCÈS" autocomplete="off" autofocus>
-            </div>
-            <button id="auth-btn" class="btn-tech">AUTHENTIFICATION</button>
-            <p id="error-msg" class="error hidden">ACCÈS REFUSÉ : PROTOCOLE DE SÉCURITÉ ACTIVÉ</p>
-        </div>
+<div class="container">
+
+<!-- AUTH -->
+<div id="auth">
+    <div class="auth-box">
+        <h1>NAXE ACCESS</h1>
+        <input type="password" id="pass" placeholder="CODE">
+        <button class="btn" onclick="login()">Connexion</button>
+        <p id="err" class="error">Code incorrect</p>
     </div>
+</div>
 
-    <div id="command-center" class="container hidden">
-        <header class="hud-header">
-            <div class="hud-info">OPÉRATION: DOMINANT | STATUT: <span class="online">EN LIGNE</span></div>
-            <h1 class="hud-title">NAXE SIEMPRE DOMINA</h1>
-            <div class="hud-info text-right">COORD: 19.75, -72.20 | UPLINK: SECURE</div>
-        </header>
+<!-- APP -->
+<div id="app" class="hidden">
+<header>
+    <h1>NAXE SYSTEM</h1>
+    <span class="status">ONLINE</span>
+</header>
 
-        <div class="grid-layout">
-            <div class="nav-panel">
-                <button class="btn-tech nav-btn">LISTE DES MEMBRES</button>
-                <button class="btn-tech nav-btn">LISTE DES CLANS</button>
-                <button class="btn-tech nav-btn">NOMBRE TOTAL</button>
-                <button class="btn-tech nav-btn">RECRUTEMENT</button>
-            </div>
+<div class="grid">
 
-            <div class="main-display">
-                <div class="video-container">
-                    <div class="video-overlay-corners"></div>
-                    <div class="play-icon">▶</div>
-                    <p class="video-text">TRANSMISSION EN COURS...</p>
-                </div>
-                <div class="credits">
-                    <p>Créé par <strong>DRUZZ IMPEROR</strong></p>
-                    <p class="sub-credit">NAXE Créateur | Destructeur suprême</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="sidebar">
+    <button class="btn" onclick="show('members')">Membres</button>
+    <button class="btn" onclick="show('clans')">Clans</button>
+    <button class="btn" onclick="show('stats')">Stats</button>
+    <button class="btn" onclick="show('recrutement')">Recrutement</button>
+</div>
 
-    <script src="app.js"></script>
+<div class="main" id="content">
+    <h2>Bienvenue</h2>
+    <p>Sélectionne une option à gauche</p>
+</div>
+
+</div>
+
+<footer>
+    NAXE © 2026 - Design Blue Pro
+</footer>
+</div>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
