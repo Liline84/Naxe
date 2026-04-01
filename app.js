@@ -23,9 +23,10 @@ function show(type) {
 
     if (type === 'members') {
         c.innerHTML = `<h2><i class="fas fa-users"></i> UNITÉS ACTIVES</h2>
-        <p>> AGENT_DRUZZ [COMMANDER]</p>
-        <p>> AGENT_02 [STRIKER]</p>
-        <p>> AGENT_03 [SUPPORT]</p>`;
+        <p>> GOD NOLA D NAXE [HAUT COMMENDEUR]</p>
+        <p>> KIRA NAXE [LIEUTENANT]</p>
+        <p>> THE QUEEN 👑 NAXE [SUPPORT]</p>
+        <p>> Xxxxx [xxxxx]</p>`;
     }
 
     if (type === 'clans') {
