@@ -1,4 +1,4 @@
-const PASS = "SK7-ALPHA";
+const PASS = "NAXE-7";
 
 function login() {
     let v = document.getElementById('pass').value.toUpperCase();
@@ -23,10 +23,13 @@ function show(type) {
 
     if (type === 'members') {
         c.innerHTML = `<h2><i class="fas fa-users"></i> UNITÉS ACTIVES</h2>
-        <p>> GOD NOLA D NAXE [HAUT COMMENDEUR]</p>
-        <p>> KIRA NAXE [LIEUTENANT]</p>
-        <p>> THE QUEEN 👑 NAXE [SUPPORT]</p>
-        <p>> Xxxxx [xxxxx]</p>`;
+        <p>👤 GOD NOLA D</p>
+        <p>👤 KIRA</p>
+        <p>👤 THE QUEEN</p>
+        <p>👤 THE REAL DEMON</p>
+        <p>👤 SUKUNA</p>
+        <p>👤 ITACHI</p>
+        <p>👤 WEDDO </p>`;
     }
 
     if (type === 'clans') {
@@ -37,17 +40,17 @@ function show(type) {
 
     if (type === 'stats') {
         c.innerHTML = `<h2><i class="fas fa-microchip"></i> DATA CORE</h2>
-        <p>MEMBRES : 3</p>
-        <p>SERVEUR : NORD-EST</p>
-        <p>ENCRYPTAGE : AES-256</p>`;
+        <p>MEMBRES : 7</p>
+        <p>SERVEUR : UNKNOW</p>
+        <p>ENCRYPTAGE : ###-###</p>`;
     }
 
     if (type === 'recrutement') {
         c.innerHTML = `<h2><i class="fas fa-user-plus"></i> PROTOCOLE RECRUTEMENT</h2>
         <p style="margin-bottom:15px; font-size:0.8rem; opacity:0.8;">Transmettez ces liens aux recrues :</p>
         <div class="recruit-box">
-            <a href="#" class="recruit-link">[ <i class="fab fa-whatsapp"></i> GROUPE WHATSAPP ]</a>
-            <a href="#" class="recruit-link">[ <i class="fab fa-whatsapp"></i> CANAL OFFICIEL ]</a>
+            <a href="#" class="recruit-link"> <i class="fab fa-whatsapp"></i> GROUPE WHATSAPP </a>
+            <a href="#" class="recruit-link"> <i class="fab fa-whatsapp"></i> CANAL OFFICIEL </a>
         </div>`;
     }
 }
