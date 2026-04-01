@@ -43,7 +43,7 @@ function show(type) {
         <p>MEMBRES : 7</p>
         <p>SERVEUR : UNKNOW</p>
         <p>ENCRYPTAGE : ###-###</p>
-        <p>DEV : <a href="https://whatsapp.com/channel/0029VagHuWO1iUxa0DCwBK16"style="background:#25D366;color:white;padding:10px 15px;border-radius:5px;text-decoration:none">Click</a></p>`;
+        <p>DEV : <a href="https://whatsapp.com/channel/0029VagHuWO1iUxa0DCwBK16"style="background:#25D366;color:white;padding:5px 10px;border-radius:10px;text-decoration:none">Click</a></p>`;
     }
 
     if (type === 'recrutement') {
