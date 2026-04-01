@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAXE | CYBER SYSTEM</title>
+    <title>NAXE | TACTICAL HUD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,35 +16,43 @@
         <div id="auth">
             <div class="auth-box">
                 <h1 class="glitch" data-text="NAXE ACCESS">NAXE ACCESS</h1>
-                <input type="password" id="pass" placeholder="ENTREZ LE CODE" autocomplete="off">
-                <button class="btn" onclick="login()">CONNEXION</button>
-                <p id="err" class="error">ACCÈS REFUSÉ</p>
+                <div class="input-container">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="pass" placeholder="PASSWORD">
+                </div>
+                <button class="btn main-btn" onclick="login()">
+                    <i class="fas fa-terminal"></i> INITIALIZE
+                </button>
+                <p id="err" class="error">INVALID CLEARANCE</p>
             </div>
         </div>
 
         <div id="app" class="hidden">
             <header>
-                <h1 class="neon">NAXE BLACKCORE</h1>
-                <div class="status-box">
+                <h1 class="neon"><i class="fas fa-shield-halved"></i> NAXE BLACKCORE</h1>
+                <div class="header-status">
                     <span id="clock">00:00:00</span>
-                    <span class="status">● ONLINE</span>
+                    <span class="online-dot">● SYSTEM LIVE</span>
                 </div>
             </header>
 
-            <div class="grid">
-                <div class="sidebar">
-                    <button class="btn" onclick="show('members')">MEMBRES</button>
-                    <button class="btn" onclick="show('clans')">CLANS</button>
-                    <button class="btn" onclick="show('stats')">STATS</button>
-                    <button class="btn" onclick="show('recrutement')">RECRUTEMENT</button>
-                </div>
+            <div class="sidebar">
+                <button class="btn nav-btn" onclick="show('members')"><i class="fas fa-users"></i> MEMBRES</button>
+                <button class="btn nav-btn" onclick="show('clans')"><i class="fas fa-sitemap"></i> CLANS</button>
+                <button class="btn nav-btn" onclick="show('stats')"><i class="fas fa-microchip"></i> STATS</button>
+                <button class="btn nav-btn" onclick="show('recrutement')"><i class="fas fa-user-plus"></i> RECRUIT</button>
+            </div>
 
-                <div class="main" id="content">
-                    </div>
+            <div class="main-display" id="content">
+                <div class="placeholder-msg">
+                    <i class="fas fa-satellite-dish"></i>
+                    <p>EN ATTENTE D'INSTRUCTIONS...</p>
+                </div>
             </div>
 
             <footer>
-                NAXE CYBER SYSTEM © 2026 • CONNEXION SÉCURISÉE
+                <div class="footer-line"></div>
+                SECURE CHANNEL NAXE-07 • 2026
             </footer>
         </div>
     </div>
