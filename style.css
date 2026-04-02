@@ -19,6 +19,11 @@ body {
 
 canvas { position: fixed; top: 0; left: 0; z-index: 0; opacity: 0.4; }
 
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
 .container {
     position: relative;
     z-index: 2;
