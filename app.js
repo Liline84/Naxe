@@ -43,7 +43,7 @@ function show(type) {
     }
 
     if (type === 'stats') {
-        c.innerHTML = `<h2><i class="fas fa-skull-crossbones"></i> DATA CORE</h2>
+        c.innerHTML = `<h2><i class="fas fa-microchip"></i> DATA CORE</h2>
         <p>MEMBRES : 7</p>
         <p>SERVEUR : UNKNOW</p>
         <p>ENCRYPTAGE : ###-###</p>
