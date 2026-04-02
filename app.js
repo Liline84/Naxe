@@ -55,7 +55,7 @@ function show(type) {
         <p style="margin-bottom:15px; font-size:0.8rem; opacity:0.8;">Transmettez ces liens aux recrues :</p>
         <div class="recruit-box">
             <a href="#" class="recruit-link"> <i class="fab fa-whatsapp"></i> GROUPE WHATSAPP </a>
-            <a href="#" class="recruit-link"> <i class="fab fa-whatsapp"></i> CANAL OFFICIEL </a>
+            <a href="https://whatsapp.com/channel/0029VbCSQTPJP20ygw0K7z2I" class="recruit-link"> <i class="fab fa-whatsapp"></i> CHANNEL OFFICIEL </a>
         </div>`;
     }
 }
