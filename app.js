@@ -1,8 +1,12 @@
 const PASS = "NAXE-7";
 
 function login() {
+    let music = document.getElementById('bgMusic');
     let v = document.getElementById('pass').value.toUpperCase();
     if (v === PASS) {
+          // Lancement Musique + Interface
+        music.play().catch(() => console.log("Audio nécessite une interaction utilisateur."));
+        document.getElementById('app').classList.remove('hidden');
         document.getElementById('auth').classList.add('hidden');
         document.getElementById('app').classList.remove('hidden');
         startClock();
