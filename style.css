@@ -109,6 +109,14 @@ input {
     font-family: inherit;
     outline: none;
 }
+
+.input-wrap {
+    position: relative;
+    margin: 25px 0;
+}
+
+.input-wrap i { position: absolute; left: 15px; top: 15px; opacity: 0.5; }
+
 .error {
     display: none;
     color: var(--danger);
@@ -199,6 +207,21 @@ header {
     clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
 }
 
+/* ZONE DE CONTENU (EN BAS) */
+.display-panel {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--blue);
+    padding: 25px;
+    min-height: 200px;
+    box-shadow: inset 0 0 20px var(--blue-dim);
+}
+
+.display-panel h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+}
 /* Zone de contenu EN DESSOUS */
 .main-display {
     background: rgba(0, 0, 0, 0.8);
@@ -230,6 +253,12 @@ header {
 
 /* RECRUTEMENT STYLE */
 .recruit-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recruit-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
