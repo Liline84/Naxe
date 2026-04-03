@@ -24,6 +24,10 @@ canvas { position: fixed; top: 0; left: 0; z-index: 0; opacity: 0.4; }
     font-weight: 900 !important;
 }
 
+.fa-fire {
+    filter: drop-shadow(0 0 5px orange);
+}
+
 .container {
     position: relative;
     z-index: 2;
